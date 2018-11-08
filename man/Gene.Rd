@@ -37,7 +37,7 @@ Awesome Student
 }
 
 \seealso{
-\code{\link{print.Gene}}, \code{\link{proteinLength}}
+\code{\link{print.Gene}}, \code{\link{ProteinLength}}
 }
 \examples{
 mygene <- Gene("Abc000011", "XYZ", c(8020, 112, 900),

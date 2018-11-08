@@ -20,5 +20,23 @@ Gene <- function(ID, symbol, ontology, CDS){
   
   out <- list(ID = ID, symbol = symbol, ontology = as.integer(ontology),
               CDS = CDS)
+  class(out) <- c("Gene", class(out))
   return(out)
+}
+
+##length of protein in nucleotides function for the Gene class
+ProteinLength <- function(GeneObject, ...){
+  UseMethod("ProteinLength", GeneObject)
+}
+ProteinLength.Gene <- function(GeneObject){
+  amino_length <- nchar(GeneObject[[4]])/3 
+  return(amino_length)
+}
+
+##print function with cat for the Gene class
+print.Gene <- function(GeneObject){
+  cat(paste("The gene ID is", GeneObject$ID, sep = " "),
+      paste("The length of the gene in bp is", nchar(GeneObject[[4]]), sep = " "),
+      paste("Symbol:", GeneObject$symbol),
+      paste("The length of the gene in amino acids is", ProteinLength(GeneObject)), sep = "\n")
 }

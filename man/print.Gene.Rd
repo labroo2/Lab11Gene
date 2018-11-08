@@ -44,10 +44,6 @@ Joyce Njuguna & Marlee Labroo
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-phyA <- Gene("Solyc10g044670.1.1", "Phytochrome A", 
-             c(155, 5515, 6355, 7165, 9584, 18298),
-"ATGTCGTCT")
-print.Gene(phyA)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

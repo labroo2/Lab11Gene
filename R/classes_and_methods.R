@@ -25,7 +25,7 @@ Gene <- function(ID, symbol, ontology, CDS){
 }
 
 ##length of protein in nucleotides function for the Gene class
-ProteinLength <- function(GeneObject, ...){
+ProteinLength <- function(GeneObject){
   UseMethod("ProteinLength", GeneObject)
 }
 ProteinLength.Gene <- function(GeneObject){
@@ -34,7 +34,7 @@ ProteinLength.Gene <- function(GeneObject){
 }
 
 ##print function with cat for the Gene class
-print.Gene <- function(GeneObject){
+print.Gene <- function(GeneObject, ...){
   cat(paste("The gene ID is", GeneObject$ID, sep = " "),
       paste("The length of the gene in bp is", nchar(GeneObject[[4]]), sep = " "),
       paste("Symbol:", GeneObject$symbol),
